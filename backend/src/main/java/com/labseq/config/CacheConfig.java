@@ -1,14 +1,21 @@
 package com.labseq.config;
 
-import io.quarkus.cache.CacheManager;
-import jakarta.enterprise.context.ApplicationScoped; // Atualize aqui
-import jakarta.inject.Inject;
+import com.github.benmanes.caffeine.cache.Cache;
+import com.github.benmanes.caffeine.cache.Caffeine;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.inject.Produces;
+
+import java.util.concurrent.TimeUnit;
 
 @ApplicationScoped
 public class CacheConfig {
 
-    @Inject
-    CacheManager cacheManager;
-
-    // Configuração de cache adicional pode ser feita aqui
+    @Produces
+    @ApplicationScoped
+    public Cache<Integer, Integer> cacheManager() {
+        return Caffeine.newBuilder()
+                .expireAfterWrite(10, TimeUnit.MINUTES)
+                .maximumSize(10000)
+                .build();
+    }
 }
