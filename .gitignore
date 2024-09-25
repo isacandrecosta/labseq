@@ -28,9 +28,9 @@ replay_pid*
 /*.log
 
 # Frontend Angular
-/node_modules
-/dist
-/.angular/cache
+/frontend/node_modules
+/frontend/dist
+/frontend/.angular/cache
 
 # IDEs
 /.idea
