@@ -1,0 +1,6 @@
+<div>
+    <h1>Labseq Component</h1>
+    <input type="number" [(ngModel)]="index" placeholder="Enter index" />
+    <button (click)="getLabseqValue()">Get Labseq Value</button>
+    <p *ngIf="labseqValue !== null">Labseq Value: {{ labseqValue }}</p>
+  </div>
