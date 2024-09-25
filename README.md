@@ -121,7 +121,7 @@ You can use Docker to build and run the application easily.
 
 The API documentation is available via Swagger. Once the backend server is running, you can access the Swagger UI at:
 
-- `http://localhost:8080/q/swagger-ui`
+- `http://localhost:8080/swagger-ui/`
 
 ## Features
 
