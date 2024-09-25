@@ -18,9 +18,9 @@ public class LabSeqController {
     LabSeqService labSeqService;
 
     @GET
-    @Path("/{n}")
+    @Path("/{number}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getLabSeqValue(@PathParam("n") int n) {
+    public Response getLabSeqValue(@PathParam("number") int n) {
         int result = labSeqService.calculateLabSeq(n);
         return Response.ok(result).build();
     }
