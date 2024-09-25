@@ -8,6 +8,11 @@ This project is an application with both frontend and backend components. Below 
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [Running the Application](#running-the-application)
+    - [Using Docker](#using-docker)
+      - [Steps to Build the Docker Image](#steps-to-build-the-docker-image)
+      - [Steps to Start the Containers](#steps-to-start-the-containers)
+      - [Access the Application](#access-the-application)
+      - [Stop the Containers](#stop-the-containers)
     - [Frontend](#frontend)
     - [Backend](#backend)
     - [API Documentation](#api-documentation)
@@ -20,6 +25,8 @@ Before you begin, ensure you have met the following requirements:
 - npm (version 6.x or later)
 - Java (version 11 or later)
 - Maven (version 3.6.3 or later)
+- Docker
+- Docker Compose
 
 ## Installation
 
@@ -38,6 +45,48 @@ Before you begin, ensure you have met the following requirements:
         ```
 
 ## Running the Application
+
+### Using Docker
+
+You can use Docker to build and run the application easily.
+
+#### Steps to Build the Docker Image
+
+1. **Build the Docker Image:**
+
+   Make sure you are in the root directory of the project where the `docker-compose.yml` file is located and run the command:
+
+   ```sh
+   docker-compose build
+   ```
+   
+#### Steps to Start the Containers
+
+ 1. **Start the Containers:**
+
+   After successfully building the images, start the containers:
+
+   ```sh
+   docker-compose up
+   ```
+
+2. **Check the Logs:**
+
+   Check the logs in the terminal to ensure all services have started correctly.
+
+#### Access the Application
+
+   - Backend: Access the backend in the browser or using a tool like curl or Postman. If the backend is configured to run on port 8080, you can access http://localhost:8080/api/labseq/2
+
+   - Frontend: Access the frontend in the browser. If the frontend is configured to run on port 80, you can access http://localhost
+
+#### Stop the Containers
+
+   To stop the containers, you can use the command:
+
+   ```sh
+   docker-compose up
+   ```
 
 ### Frontend
 

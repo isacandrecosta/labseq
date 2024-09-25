@@ -1,6 +1,21 @@
-FROM quay.io/quarkus/quarkus-distroless-image:2.0
+FROM maven:3.8.4-openjdk-17 AS build
 
-WORKDIR /app
-COPY target/quarkus-app /app
+WORKDIR /usr/src/app
 
-CMD ["java", "-jar", "/app/quarkus-run.jar"]
+COPY pom.xml .
+
+RUN mvn dependency:go-offline
+
+COPY src ./src
+
+RUN mvn package -DskipTests
+
+FROM openjdk:17-jdk-slim
+
+WORKDIR /work/
+
+COPY --from=build /usr/src/app/target/labseq-service-1.0.0-runner.jar /work/application.jar
+
+EXPOSE 8080
+
+CMD ["java", "-jar", "application.jar"]
