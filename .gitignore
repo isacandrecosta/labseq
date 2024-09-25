@@ -24,8 +24,8 @@ hs_err_pid*
 replay_pid*
 
 # Backend Quarkus
-/target
-/*.log
+/backend/target
+/backend/*.log
 
 # Frontend Angular
 /frontend/node_modules
